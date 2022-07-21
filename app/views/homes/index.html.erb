@@ -1,4 +1,9 @@
 <h2><b>University</b></h2>
+<br>
+<%= button_to "Product" , products_path , method: :get %>
+<br>
+<%= button_to "Send Mail" , new_order_path , method: :get %>
+<br>
 <p class="navbar-text float-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.

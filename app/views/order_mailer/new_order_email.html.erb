@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>You got a new order from <%= @event.title %>!</p>
+    <p>
+    Order details<br>
+    --------------------------
+
+    <p>
+    <p>Title: <%= @event.title %></p>
+    <p>Description: <%= @event.description %></p>
+    <p>Start_date: <%= @event.start_date %></p>
+    <p>End_Date: <%= @event.end_date %></p>
+    <p>
+    <!-- </p>
+    <p>Name: <%#= @order.name %></p>
+    <p>Email: <%#= @order.email %></p>
+    <p>Address: <%#= @order.address %></p>
+    <p>Phone: <%#= @order.phone %></p>
+    <p> -->
+    Message:<br>
+    ----------
+    </p>
+    <p><%= @event.description %></p>
+  </body>
+</html>

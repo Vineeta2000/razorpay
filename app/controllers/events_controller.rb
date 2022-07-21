@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    byebug
+    
     @event = Event.new
   end
 
@@ -27,12 +27,15 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    #byebug
+   byebug
     @user = User.find(params[:event][:user_id])
     @event = @user.events.new(event_params)
 
-    respond_to do |format|
+  
+   respond_to do |format|
       if @event.save
+       debugger
+        OrderMailer.with(event: @event).new_order_email.deliver_later
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else

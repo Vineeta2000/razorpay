@@ -1,0 +1,40 @@
+<h3>Mail..</h3>
+<%= form_with model: @order, url:  orders_path ,method: :post do |form|  %>
+
+<div>
+	<%= form.label :name %>
+	<%= form.text_field :name %>
+</div>
+<br>
+
+<div>
+	<%= form.label :address %>
+	<%= form.text_field :address %>
+</div>
+<br>
+
+<div>
+	<%= form.label :phone %>
+	<%= form.text_field :phone %>
+</div>
+<br>
+
+<div>
+	<%= form.label :email %>
+	<%= form.email_field :email %>
+</div>
+<br>
+
+<div>
+	<%= form.label :message%>
+	<%= form.text_field :message%>
+</div>
+
+<div>
+	<%= form.submit 'save' %>
+</div>
+
+<% end %>
+
+
+

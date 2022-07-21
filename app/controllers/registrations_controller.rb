@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
     @role = Role.find(params[:user][:role_ids])
     @user.roles << @role
     #byebug
-    if current_user.roles.map(&:name).include?(Role.second.name)
+    if @user.roles.map(&:name).include?(Role.second.name)
        @parent = User.first
        @user.update(parent_id: @parent.id)
      end
